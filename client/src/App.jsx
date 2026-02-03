@@ -28,38 +28,48 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen p-4 md:p-8 flex justify-center items-center">
-      <div className="max-w-5xl w-full mx-auto flex flex-col gap-4">
-        {/* Header */}
-        <Header />
-
-        {/* Main Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <WebsitesSection
-            websites={blocklist.websites}
-            onAdd={addWebsite}
-            onDelete={deleteWebsite}
-          />
-          <ProgramsSection
-            programs={blocklist.programs}
-            onAdd={addProgram}
-            onDelete={deleteProgram}
-          />
-        </div>
-
-        {/* Export Section */}
-        <ExportSection onExport={exportBat} />
-
-        {/* Export History */}
-        <ExportHistory
-          history={versions.history}
-          onDelete={deleteHistory}
-        />
-
-        {/* Footer */}
-        <Footer />
+    <>
+      {/* Animated Background */}
+      <div className="app-background">
+        <div className="light-orb light-orb-1 animate-glow"></div>
+        <div className="light-orb light-orb-2 animate-glow"></div>
+        <div className="light-orb light-orb-3 animate-glow"></div>
+        <div className="light-orb light-orb-4 animate-glow"></div>
       </div>
-    </div>
+
+      <div className="min-h-screen p-4 md:p-8 flex justify-center items-center relative">
+        <div className="max-w-5xl w-full mx-auto flex flex-col gap-4">
+          {/* Header */}
+          <Header />
+
+          {/* Main Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <WebsitesSection
+              websites={blocklist.websites}
+              onAdd={addWebsite}
+              onDelete={deleteWebsite}
+            />
+            <ProgramsSection
+              programs={blocklist.programs}
+              onAdd={addProgram}
+              onDelete={deleteProgram}
+            />
+          </div>
+
+          {/* Export Section */}
+          <ExportSection onExport={exportBat} />
+
+          {/* Export History */}
+          <ExportHistory
+            history={versions.history}
+            onDelete={deleteHistory}
+          />
+
+          {/* Footer */}
+          <Footer />
+        </div>
+      </div>
+    </>
   )
 }
 

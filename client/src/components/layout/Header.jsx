@@ -22,7 +22,7 @@ export function Header() {
             <p className="text-slate-400 text-lg">
                 {t('appSubtitle')}
             </p>
-            <div className="mt-3 inline-block px-4 py-1 rounded-full bg-blue-400 text-sm font-semibold">
+            <div className="mt-3 inline-block px-4 py-1.5 rounded-full glass-button text-sm font-semibold text-blue-300 border border-blue-500/30">
                 {t('currentVersion')}: {APP_VERSION}
             </div>
         </header>

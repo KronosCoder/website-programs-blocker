@@ -3,7 +3,7 @@ import { Trash2 } from 'lucide-react'
 export function WebsiteItem({ site, index, onDelete }) {
     return (
         <div
-            className="flex items-center justify-between px-4 py-2.5 rounded-lg bg-slate-800/40 hover:bg-slate-700/50 transition-all group"
+            className="flex items-center justify-between px-4 py-2.5 rounded-xl glass-item group"
             style={{ animationDelay: `${index * 30}ms` }}
         >
             <span className="text-slate-300 truncate">{site.url}</span>

@@ -19,7 +19,7 @@ export function WebsitesSection({ websites, onAdd, onDelete }) {
                 <h2 className="text-xl font-semibold flex items-center gap-2 text-[var(--text-primary)]">
                     <Globe className="w-6 h-6 text-blue-400" /> {t('websitesToBlock')}
                 </h2>
-                <span className="px-3 py-1 rounded-full bg-blue-600/30 text-blue-300 text-sm">
+                <span className="px-3 py-1 rounded-full glass-button text-blue-300 text-sm border border-blue-500/20">
                     {websites.length} {t('sites')}
                 </span>
             </div>
@@ -31,7 +31,7 @@ export function WebsitesSection({ websites, onAdd, onDelete }) {
                     value={newUrl}
                     onChange={(e) => setNewUrl(e.target.value)}
                     placeholder={t('enterUrl')}
-                    className="flex-1 px-4 py-2.5 rounded-lg bg-slate-800/50 border border-slate-600 focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/30 text-[var(--text-primary)] placeholder-slate-400 transition-all"
+                    className="flex-1 px-4 py-2.5 rounded-xl glass-input text-[var(--text-primary)] placeholder-slate-500 transition-all focus:outline-none"
                 />
                 <button
                     type="submit"

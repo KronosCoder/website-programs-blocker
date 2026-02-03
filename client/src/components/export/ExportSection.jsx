@@ -5,7 +5,7 @@ export function ExportSection({ onExport }) {
     const { t } = useLanguage()
 
     return (
-        <section className="glass rounded-2xl p-6 mt-6 animate-fade-in" style={{ animationDelay: '200ms' }}>
+        <section className="glass rounded-2xl p-6 mt-6 animate-fade-in glow-green" style={{ animationDelay: '200ms' }}>
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
                 <div>
                     <h2 className="text-xl font-semibold flex items-center gap-2 text-[var(--text-primary)]">
@@ -17,7 +17,7 @@ export function ExportSection({ onExport }) {
                 </div>
                 <button
                     onClick={onExport}
-                    className="px-8 py-3 rounded-xl bg-indigo-600 font-bold text-lg text-white cursor-pointer transition-all hover:bg-indigo-500 hover:scale-102"
+                    className="px-8 py-3 rounded-xl btn-gradient font-bold text-lg text-white cursor-pointer"
                 >
                     <Package className="w-5 h-5 inline mr-2" /> {t('exportButton')}
                 </button>

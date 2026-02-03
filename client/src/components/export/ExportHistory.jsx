@@ -31,7 +31,7 @@ export function ExportHistory({ history, onDelete }) {
                 <h2 className="text-xl font-semibold flex items-center gap-2 text-[var(--text-primary)]">
                     <ClipboardList className="w-6 h-6 text-blue-400" /> {t('exportHistory')}
                 </h2>
-                <span className="px-3 py-1 rounded-full bg-slate-700 text-slate-300 text-sm">
+                <span className="px-3 py-1 rounded-full glass-button text-slate-300 text-sm border border-white/10">
                     {history.length} {t('exports')}
                 </span>
             </div>
@@ -41,10 +41,10 @@ export function ExportHistory({ history, onDelete }) {
                 {paginatedHistory.map((item) => (
                     <div
                         key={item.version}
-                        className="flex items-center justify-between px-4 py-3 rounded-lg bg-slate-800/40 group"
+                        className="flex items-center justify-between px-4 py-3 rounded-xl glass-item group"
                     >
                         <div className="flex items-center gap-4">
-                            <span className="px-3 py-1 rounded-full bg-blue-600/30 text-blue-300 font-mono text-sm">
+                            <span className="px-3 py-1 rounded-full glass-button text-blue-300 font-mono text-sm border border-blue-500/20">
                                 {item.version}
                             </span>
                             <span className="text-[var(--text-secondary)] text-sm">
@@ -60,7 +60,7 @@ export function ExportHistory({ history, onDelete }) {
                                     link.download = `game_blocker_${item.version}.zip`
                                     link.click()
                                 }}
-                                className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/20 text-sm transition-all flex items-center gap-1.5 cursor-pointer"
+                                className="px-3 py-1.5 rounded-lg glass-button text-sm transition-all flex items-center gap-1.5 cursor-pointer border border-white/10 hover:border-white/20"
                             >
                                 <Download className="w-3.5 h-3.5" /> {t('download')}
                             </button>

@@ -129,7 +129,7 @@ echo.
 echo Gaming websites and programs are now blocked.
 echo To unblock, run "unblock_games_${version}.bat"
 echo.
-timeout /t 5 /nobreak >nul
+timeout /t 2 /nobreak >nul
 exit
 `;
 
@@ -229,7 +229,7 @@ echo ========================================
 echo.
 echo All gaming websites and programs are now unblocked.
 echo.
-timeout /t 5 /nobreak >nul
+timeout /t 2 /nobreak >nul
 exit
 `;
 
