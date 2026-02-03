@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const fs = require('fs');
 const path = require('path');
+const archiver = require('archiver');
 
 const app = express();
 const PORT = 3001;
@@ -188,6 +189,54 @@ app.get('/api/download/:filename', (req, res) => {
     res.download(filePath);
   } else {
     res.status(404).json({ error: 'File not found' });
+  }
+});
+
+// GET /api/download-zip/:version - Download both bat files as a zip
+app.get('/api/download-zip/:version', (req, res) => {
+  try {
+    const data = readData();
+    const version = req.params.version;
+
+    // Find the history entry for this version
+    const historyEntry = data.exportHistory.find(h => h.version === version);
+    if (!historyEntry) {
+      return res.status(404).json({ error: 'Version not found' });
+    }
+
+    const blockFilePath = path.join(EXPORTS_DIR, historyEntry.blockFile);
+    const unblockFilePath = path.join(EXPORTS_DIR, historyEntry.unblockFile);
+
+    // Check if both files exist
+    if (!fs.existsSync(blockFilePath) || !fs.existsSync(unblockFilePath)) {
+      return res.status(404).json({ error: 'BAT files not found' });
+    }
+
+    // Set response headers for zip download
+    const zipFileName = `game_blocker_${version}.zip`;
+    res.setHeader('Content-Type', 'application/zip');
+    res.setHeader('Content-Disposition', `attachment; filename="${zipFileName}"`);
+
+    // Create archive
+    const archive = archiver('zip', { zlib: { level: 9 } });
+
+    // Handle archive errors
+    archive.on('error', (err) => {
+      res.status(500).json({ error: 'Failed to create zip file' });
+    });
+
+    // Pipe archive to response
+    archive.pipe(res);
+
+    // Add files to archive
+    archive.file(blockFilePath, { name: historyEntry.blockFile });
+    archive.file(unblockFilePath, { name: historyEntry.unblockFile });
+
+    // Finalize archive
+    archive.finalize();
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Failed to download zip' });
   }
 });
 

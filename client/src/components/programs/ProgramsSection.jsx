@@ -30,7 +30,7 @@ export function ProgramsSection({ programs, onAdd, onDelete }) {
 
                 {/* Program List */}
                 <div className="space-y-2 max-h-72 overflow-y-auto pr-2">
-                    {programs.map((program, index) => (
+                    {[...programs].reverse().map((program, index) => (
                         <ProgramItem
                             key={program.id}
                             program={program}

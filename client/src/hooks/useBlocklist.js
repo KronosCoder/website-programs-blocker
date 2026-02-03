@@ -51,6 +51,13 @@ export function useBlocklist(t) {
             return false
         }
 
+        // Check if website already exists
+        const exists = blocklist.websites.some(w => w.url.toLowerCase() === cleanUrl.toLowerCase())
+        if (exists) {
+            Toast.fire({ icon: 'warning', title: t('websiteAlreadyExists') })
+            return false
+        }
+
         try {
             showLoading(t('addingWebsite'))
             const website = await addWebsiteApi(url)
@@ -96,6 +103,18 @@ export function useBlocklist(t) {
         }
         if (!program.path.trim()) {
             Toast.fire({ icon: 'warning', title: t('pleaseEnterProgramPath') })
+            return false
+        }
+
+        // Check if program already exists (by name or path)
+        const existsByName = blocklist.programs.some(p => p.name.toLowerCase() === program.name.trim().toLowerCase())
+        const existsByPath = blocklist.programs.some(p => p.path.toLowerCase() === program.path.trim().toLowerCase())
+        if (existsByName) {
+            Toast.fire({ icon: 'warning', title: t('programNameExists') })
+            return false
+        }
+        if (existsByPath) {
+            Toast.fire({ icon: 'warning', title: t('programPathExists') })
             return false
         }
 

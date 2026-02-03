@@ -54,18 +54,11 @@ export function ExportHistory({ history, onDelete }) {
                         <div className="flex gap-2">
                             <button
                                 onClick={() => {
-                                    // Download both files
-                                    const blockLink = document.createElement('a')
-                                    blockLink.href = `${API_BASE}/download/${item.blockFile}`
-                                    blockLink.download = item.blockFile
-                                    blockLink.click()
-
-                                    setTimeout(() => {
-                                        const unblockLink = document.createElement('a')
-                                        unblockLink.href = `${API_BASE}/download/${item.unblockFile}`
-                                        unblockLink.download = item.unblockFile
-                                        unblockLink.click()
-                                    }, 100)
+                                    // Download both files as a zip
+                                    const link = document.createElement('a')
+                                    link.href = `${API_BASE}/download-zip/${item.version}`
+                                    link.download = `game_blocker_${item.version}.zip`
+                                    link.click()
                                 }}
                                 className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/20 text-sm transition-all flex items-center gap-1.5 cursor-pointer"
                             >

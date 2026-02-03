@@ -43,7 +43,7 @@ export function WebsitesSection({ websites, onAdd, onDelete }) {
 
             {/* Website List */}
             <div className="space-y-2 max-h-72 overflow-y-auto pr-2">
-                {websites.map((site, index) => (
+                {[...websites].reverse().map((site, index) => (
                     <WebsiteItem
                         key={site.id}
                         site={site}

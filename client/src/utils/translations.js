@@ -92,6 +92,9 @@ export const translations = {
         yesDelete: 'Yes, delete!',
         deleted: 'Deleted',
         failedToDeleteHistory: 'Failed to delete history',
+        websiteAlreadyExists: 'This website already exists!',
+        programNameExists: 'A program with this name already exists!',
+        programPathExists: 'A program with this path already exists!',
     },
     th: {
         // Header
@@ -186,6 +189,9 @@ export const translations = {
         yesDelete: 'ใช่ ลบเลย!',
         deleted: 'ลบแล้ว',
         failedToDeleteHistory: 'ไม่สามารถลบประวัติได้',
+        websiteAlreadyExists: 'เว็บไซต์นี้มีอยู่แล้ว!',
+        programNameExists: 'มีโปรแกรมชื่อนี้อยู่แล้ว!',
+        programPathExists: 'มีโปรแกรมที่พาธนี้อยู่แล้ว!',
     }
 }
 
