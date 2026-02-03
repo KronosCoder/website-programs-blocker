@@ -1,7 +1,10 @@
 import { LanguageToggle } from '../common/LanguageToggle'
 import { useLanguage } from '../../context/LanguageContext'
 
-export function Header({ currentVersion }) {
+// Manual app version (separate from BAT export version)
+const APP_VERSION = 'v1.0.0'
+
+export function Header() {
     const { t } = useLanguage()
 
     return (
@@ -20,7 +23,7 @@ export function Header({ currentVersion }) {
                 {t('appSubtitle')}
             </p>
             <div className="mt-3 inline-block px-4 py-1 rounded-full bg-blue-400 text-sm font-semibold">
-                {t('currentVersion')}: {currentVersion}
+                {t('currentVersion')}: {APP_VERSION}
             </div>
         </header>
     )

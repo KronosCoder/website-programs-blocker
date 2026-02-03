@@ -31,7 +31,7 @@ function App() {
     <div className="min-h-screen p-4 md:p-8 flex justify-center items-center">
       <div className="max-w-5xl w-full mx-auto flex flex-col gap-4">
         {/* Header */}
-        <Header currentVersion={versions.currentVersion} />
+        <Header />
 
         {/* Main Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">

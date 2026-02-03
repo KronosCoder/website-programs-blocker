@@ -1,6 +1,6 @@
 @echo off
 :: ===================================
-:: Game Blocker Script v1.0.10
+:: Game Blocker Script v1.1.0
 :: Block gaming websites and programs
 :: Auto-elevates to Administrator!
 :: ===================================
@@ -15,12 +15,12 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
-title Game Blocker - Blocking Mode v1.0.10
+title Game Blocker - Blocking Mode v1.1.0
 color 0C
 echo.
 echo ========================================
 echo        GAME BLOCKER - BLOCK MODE
-echo             Version: v1.0.10
+echo             Version: v1.1.0
 echo ========================================
 echo.
 
@@ -39,7 +39,7 @@ copy "%HOSTS%" "%HOSTS%.backup" >nul 2>&1
 
 :: Add gaming websites to hosts file (redirect to localhost)
 echo. >> "%HOSTS%"
-echo # ====== GAME BLOCKER v1.0.10 - START ====== >> "%HOSTS%"
+echo # ====== GAME BLOCKER v1.1.0 - START ====== >> "%HOSTS%"
 
 echo 127.0.0.1 friv.com >> "%HOSTS%"
 echo 127.0.0.1 www.friv.com >> "%HOSTS%"
@@ -70,7 +70,7 @@ echo 127.0.0.1 epicgames.com >> "%HOSTS%"
 echo 127.0.0.1 www.epicgames.com >> "%HOSTS%"
 echo 127.0.0.1 store.epicgames.com >> "%HOSTS%"
 
-echo # ====== GAME BLOCKER v1.0.10 - END ====== >> "%HOSTS%"
+echo # ====== GAME BLOCKER v1.1.0 - END ====== >> "%HOSTS%"
 
 echo [OK] Gaming websites blocked!
 echo.
@@ -150,11 +150,11 @@ echo.
 
 echo ========================================
 echo      GAME BLOCKING COMPLETED!
-echo             Version: v1.0.10
+echo             Version: v1.1.0
 echo ========================================
 echo.
 echo Gaming websites and programs are now blocked.
-echo To unblock, run "unblock_games_v1.0.10.bat"
+echo To unblock, run "unblock_games_v1.1.0.bat"
 echo.
 timeout /t 5 /nobreak >nul
 exit

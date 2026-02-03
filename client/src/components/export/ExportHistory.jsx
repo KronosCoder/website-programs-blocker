@@ -52,18 +52,25 @@ export function ExportHistory({ history, onDelete }) {
                             </span>
                         </div>
                         <div className="flex gap-2">
-                            <a
-                                href={`${API_BASE}/download/${item.blockFile}`}
-                                className="px-3 py-1 rounded-lg bg-slate-700 hover:bg-blue-600 text-sm transition-all flex items-center gap-1"
+                            <button
+                                onClick={() => {
+                                    // Download both files
+                                    const blockLink = document.createElement('a')
+                                    blockLink.href = `${API_BASE}/download/${item.blockFile}`
+                                    blockLink.download = item.blockFile
+                                    blockLink.click()
+
+                                    setTimeout(() => {
+                                        const unblockLink = document.createElement('a')
+                                        unblockLink.href = `${API_BASE}/download/${item.unblockFile}`
+                                        unblockLink.download = item.unblockFile
+                                        unblockLink.click()
+                                    }, 100)
+                                }}
+                                className="px-3 py-1.5 rounded-lg bg-white/15 hover:bg-white/20 text-sm transition-all flex items-center gap-1.5 cursor-pointer"
                             >
-                                <Download className="w-3 h-3" /> {t('block')}
-                            </a>
-                            <a
-                                href={`${API_BASE}/download/${item.unblockFile}`}
-                                className="px-3 py-1 rounded-lg bg-slate-700 hover:bg-green-600 text-sm transition-all flex items-center gap-1"
-                            >
-                                <Download className="w-3 h-3" /> {t('unblock')}
-                            </a>
+                                <Download className="w-3.5 h-3.5" /> {t('download')}
+                            </button>
                             <button
                                 onClick={() => handleDelete(item.version)}
                                 className="p-1.5 rounded-lg bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white transition-all opacity-0 group-hover:opacity-100 cursor-pointer"

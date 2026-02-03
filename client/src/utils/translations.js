@@ -40,6 +40,7 @@ export const translations = {
         exports: 'exports',
         block: 'Block',
         unblock: 'Unblock',
+        download: 'Download',
 
         // Pagination
         page: 'Page',
@@ -133,6 +134,7 @@ export const translations = {
         exports: 'รายการ',
         block: 'บล็อก',
         unblock: 'ปลดบล็อก',
+        download: 'ดาวน์โหลด',
 
         // Pagination
         page: 'หน้า',

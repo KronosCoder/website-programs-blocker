@@ -11,6 +11,8 @@ export function LanguageProvider({ children }) {
 
     useEffect(() => {
         localStorage.setItem('language', language)
+        // Set body data-lang attribute for font switching
+        document.body.setAttribute('data-lang', language)
     }, [language])
 
     const toggleLanguage = () => {

@@ -136,8 +136,16 @@ app.post('/api/export', (req, res) => {
     fs.writeFileSync(path.join(EXPORTS_DIR, blockFileName), blockBat);
     fs.writeFileSync(path.join(EXPORTS_DIR, unblockFileName), unblockBat);
 
-    // Update version and history
+    // Update version and history (semantic versioning: x.y.z where each segment rolls over at 10)
     data.version.patch++;
+    if (data.version.patch >= 10) {
+      data.version.patch = 0;
+      data.version.minor++;
+      if (data.version.minor >= 10) {
+        data.version.minor = 0;
+        data.version.major++;
+      }
+    }
     data.exportHistory.unshift({
       version,
       date: new Date().toISOString(),

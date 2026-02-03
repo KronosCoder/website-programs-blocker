@@ -43,9 +43,9 @@ export function useBlocklist(t) {
             return false
         }
 
-        // Basic URL validation
-        const urlPattern = /^[a-zA-Z0-9][a-zA-Z0-9-]{0,61}[a-zA-Z0-9]?(\.[a-zA-Z]{2,})+$/
-        const cleanUrl = url.replace(/^(https?:\/\/)?(www\.)?/, '').replace(/\/$/, '')
+        // Basic URL validation - supports subdomains like th.y8.com
+        const urlPattern = /^([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/
+        const cleanUrl = url.replace(/^(https?:\/\/)?(www\.)?/, '').replace(/\/$/, '').replace(/\/.*$/, '')
         if (!urlPattern.test(cleanUrl)) {
             Toast.fire({ icon: 'warning', title: t('pleaseEnterValidUrl') })
             return false
@@ -180,7 +180,7 @@ export function useBlocklist(t) {
     const deleteHistory = async (version, onPageReset) => {
         const confirmed = await confirmDialog({
             title: t('deleteExportTitle'),
-            text: `${t('deleteExportText')} "${version}" ${t('andItsBatFiles')}`,
+            text: `${t('deleteExportText')} "${version}" ${t('andItsBat Files')}`,
             confirmText: t('yesDelete'),
             cancelText: t('cancel')
         })

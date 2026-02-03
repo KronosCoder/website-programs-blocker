@@ -1,6 +1,6 @@
 @echo off
 :: ===================================
-:: Game Unblocker Script v1.0.10
+:: Game Unblocker Script v1.1.0
 :: Remove blocks on gaming websites and programs
 :: Auto-elevates to Administrator!
 :: ===================================
@@ -15,12 +15,12 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
-title Game Blocker - Unblock Mode v1.0.10
+title Game Blocker - Unblock Mode v1.1.0
 color 0A
 echo.
 echo ========================================
 echo       GAME BLOCKER - UNBLOCK MODE
-echo             Version: v1.0.10
+echo             Version: v1.1.0
 echo ========================================
 echo.
 
@@ -100,7 +100,7 @@ echo.
 
 echo ========================================
 echo     GAME UNBLOCKING COMPLETED!
-echo             Version: v1.0.10
+echo             Version: v1.1.0
 echo ========================================
 echo.
 echo All gaming websites and programs are now unblocked.

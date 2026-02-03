@@ -17,7 +17,7 @@ export function ExportSection({ onExport }) {
                 </div>
                 <button
                     onClick={onExport}
-                    className="px-8 py-3 rounded-xl bg-green-400 font-bold text-lg cursor-pointer hover:scale-105 transition-all"
+                    className="px-8 py-3 rounded-xl bg-indigo-600 font-bold text-lg text-white cursor-pointer transition-all hover:bg-indigo-500 hover:scale-102"
                 >
                     <Package className="w-5 h-5 inline mr-2" /> {t('exportButton')}
                 </button>

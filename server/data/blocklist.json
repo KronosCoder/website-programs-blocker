@@ -111,6 +111,10 @@
     {
       "id": 28,
       "url": "store.epicgames.com"
+    },
+    {
+      "id": 29,
+      "url": "th.y8.com"
     }
   ],
   "programs": [
@@ -165,21 +169,21 @@
   ],
   "version": {
     "major": 1,
-    "minor": 0,
-    "patch": 11
+    "minor": 1,
+    "patch": 2
   },
   "exportHistory": [
     {
-      "version": "v1.0.10",
-      "date": "2026-02-02T17:38:54.062Z",
-      "blockFile": "block_games_v1.0.10.bat",
-      "unblockFile": "unblock_games_v1.0.10.bat"
+      "version": "v1.1.1",
+      "date": "2026-02-03T03:52:46.430Z",
+      "blockFile": "block_games_v1.1.1.bat",
+      "unblockFile": "unblock_games_v1.1.1.bat"
     },
     {
-      "version": "v1.0.9",
-      "date": "2026-02-02T17:38:06.674Z",
-      "blockFile": "block_games_v1.0.9.bat",
-      "unblockFile": "unblock_games_v1.0.9.bat"
+      "version": "v1.1.0",
+      "date": "2026-02-03T02:36:19.864Z",
+      "blockFile": "block_games_v1.1.0.bat",
+      "unblockFile": "unblock_games_v1.1.0.bat"
     }
   ]
 }
