@@ -3,7 +3,7 @@ const router = express.Router();
 const exportController = require('../controllers/exportController');
 
 // POST /api/export - Export BAT files
-router.post('/', exportController.exportBat);
+router.post('/export', exportController.exportBat);
 
 // GET /api/versions - Get export history
 router.get('/versions', exportController.getVersions);

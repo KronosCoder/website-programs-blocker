@@ -1,6 +1,6 @@
 @echo off
 :: ===================================
-:: Game Blocker Script v1.1.2
+:: Game Blocker Script v1.2.0
 :: Block gaming websites and programs
 :: Auto-elevates to Administrator!
 :: ===================================
@@ -15,12 +15,12 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
-title Game Blocker - Blocking Mode v1.1.2
+title Game Blocker - Blocking Mode v1.2.0
 color 0C
 echo.
 echo ========================================
 echo        GAME BLOCKER - BLOCK MODE
-echo             Version: v1.1.2
+echo             Version: v1.2.0
 echo ========================================
 echo.
 
@@ -39,39 +39,60 @@ copy "%HOSTS%" "%HOSTS%.backup" >nul 2>&1
 
 :: Add gaming websites to hosts file (redirect to localhost)
 echo. >> "%HOSTS%"
-echo # ====== GAME BLOCKER v1.1.2 - START ====== >> "%HOSTS%"
+echo # ====== GAME BLOCKER v1.2.0 - START ====== >> "%HOSTS%"
 
 echo 127.0.0.1 friv.com >> "%HOSTS%"
 echo 127.0.0.1 www.friv.com >> "%HOSTS%"
+echo 127.0.0.1 www.friv.com >> "%HOSTS%"
 echo 127.0.0.1 friv.net >> "%HOSTS%"
+echo 127.0.0.1 www.friv.net >> "%HOSTS%"
 echo 127.0.0.1 www.friv.net >> "%HOSTS%"
 echo 127.0.0.1 y8.com >> "%HOSTS%"
 echo 127.0.0.1 www.y8.com >> "%HOSTS%"
+echo 127.0.0.1 www.y8.com >> "%HOSTS%"
 echo 127.0.0.1 poki.com >> "%HOSTS%"
+echo 127.0.0.1 www.poki.com >> "%HOSTS%"
 echo 127.0.0.1 www.poki.com >> "%HOSTS%"
 echo 127.0.0.1 crazygames.com >> "%HOSTS%"
 echo 127.0.0.1 www.crazygames.com >> "%HOSTS%"
+echo 127.0.0.1 www.crazygames.com >> "%HOSTS%"
 echo 127.0.0.1 kongregate.com >> "%HOSTS%"
+echo 127.0.0.1 www.kongregate.com >> "%HOSTS%"
 echo 127.0.0.1 www.kongregate.com >> "%HOSTS%"
 echo 127.0.0.1 miniclip.com >> "%HOSTS%"
 echo 127.0.0.1 www.miniclip.com >> "%HOSTS%"
+echo 127.0.0.1 www.miniclip.com >> "%HOSTS%"
 echo 127.0.0.1 armorgames.com >> "%HOSTS%"
+echo 127.0.0.1 www.armorgames.com >> "%HOSTS%"
 echo 127.0.0.1 www.armorgames.com >> "%HOSTS%"
 echo 127.0.0.1 newgrounds.com >> "%HOSTS%"
 echo 127.0.0.1 www.newgrounds.com >> "%HOSTS%"
+echo 127.0.0.1 www.newgrounds.com >> "%HOSTS%"
 echo 127.0.0.1 slither.io >> "%HOSTS%"
+echo 127.0.0.1 www.slither.io >> "%HOSTS%"
 echo 127.0.0.1 agar.io >> "%HOSTS%"
+echo 127.0.0.1 www.agar.io >> "%HOSTS%"
 echo 127.0.0.1 krunker.io >> "%HOSTS%"
+echo 127.0.0.1 www.krunker.io >> "%HOSTS%"
 echo 127.0.0.1 diep.io >> "%HOSTS%"
+echo 127.0.0.1 www.diep.io >> "%HOSTS%"
 echo 127.0.0.1 store.steampowered.com >> "%HOSTS%"
+echo 127.0.0.1 www.store.steampowered.com >> "%HOSTS%"
 echo 127.0.0.1 steampowered.com >> "%HOSTS%"
+echo 127.0.0.1 www.steampowered.com >> "%HOSTS%"
 echo 127.0.0.1 steamcommunity.com >> "%HOSTS%"
+echo 127.0.0.1 www.steamcommunity.com >> "%HOSTS%"
 echo 127.0.0.1 epicgames.com >> "%HOSTS%"
 echo 127.0.0.1 www.epicgames.com >> "%HOSTS%"
+echo 127.0.0.1 www.epicgames.com >> "%HOSTS%"
 echo 127.0.0.1 store.epicgames.com >> "%HOSTS%"
+echo 127.0.0.1 www.store.epicgames.com >> "%HOSTS%"
 echo 127.0.0.1 th.y8.com >> "%HOSTS%"
+echo 127.0.0.1 www.th.y8.com >> "%HOSTS%"
+echo 127.0.0.1 gemini.google.com >> "%HOSTS%"
+echo 127.0.0.1 www.gemini.google.com >> "%HOSTS%"
 
-echo # ====== GAME BLOCKER v1.1.2 - END ====== >> "%HOSTS%"
+echo # ====== GAME BLOCKER v1.2.0 - END ====== >> "%HOSTS%"
 
 echo [OK] Gaming websites blocked!
 echo.
@@ -151,11 +172,11 @@ echo.
 
 echo ========================================
 echo      GAME BLOCKING COMPLETED!
-echo             Version: v1.1.2
+echo             Version: v1.2.0
 echo ========================================
 echo.
 echo Gaming websites and programs are now blocked.
-echo To unblock, run "unblock_games_v1.1.2.bat"
+echo To unblock, run "unblock_games_v1.2.0.bat"
 echo.
-timeout /t 5 /nobreak >nul
+timeout /t 2 /nobreak >nul
 exit

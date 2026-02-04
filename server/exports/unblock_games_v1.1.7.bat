@@ -1,6 +1,6 @@
 @echo off
 :: ===================================
-:: Game Unblocker Script v1.1.2
+:: Game Unblocker Script v1.1.7
 :: Remove blocks on gaming websites and programs
 :: Auto-elevates to Administrator!
 :: ===================================
@@ -15,12 +15,12 @@ if %errorLevel% neq 0 (
     exit /b
 )
 
-title Game Blocker - Unblock Mode v1.1.2
+title Game Blocker - Unblock Mode v1.1.7
 color 0A
 echo.
 echo ========================================
 echo       GAME BLOCKER - UNBLOCK MODE
-echo             Version: v1.1.2
+echo             Version: v1.1.7
 echo ========================================
 echo.
 
@@ -69,6 +69,10 @@ findstr /v "steamcommunity.com" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul
 copy "%HOSTS%" "%TEMP_HOSTS%" >nul 2>&1
 findstr /v "epicgames.com" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul
 copy "%HOSTS%" "%TEMP_HOSTS%" >nul 2>&1
+findstr /v "google.com/app" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul
+copy "%HOSTS%" "%TEMP_HOSTS%" >nul 2>&1
+findstr /v "google.com" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul
+copy "%HOSTS%" "%TEMP_HOSTS%" >nul 2>&1
 
 del "%TEMP_HOSTS%" >nul 2>&1
 
@@ -100,10 +104,10 @@ echo.
 
 echo ========================================
 echo     GAME UNBLOCKING COMPLETED!
-echo             Version: v1.1.2
+echo             Version: v1.1.7
 echo ========================================
 echo.
 echo All gaming websites and programs are now unblocked.
 echo.
-timeout /t 5 /nobreak >nul
+timeout /t 2 /nobreak >nul
 exit

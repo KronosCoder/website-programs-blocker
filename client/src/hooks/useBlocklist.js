@@ -16,7 +16,6 @@ export function useBlocklist(t) {
     const [versions, setVersions] = useState({ currentVersion: 'v1.0.0', history: [] })
     const [loading, setLoading] = useState(true)
 
-    // Fetch data on mount
     useEffect(() => {
         fetchData()
     }, [])
@@ -36,14 +35,14 @@ export function useBlocklist(t) {
         }
     }
 
-    // Add website with validation
+    // Add website
     const addWebsite = async (url) => {
         if (!url.trim()) {
             Toast.fire({ icon: 'warning', title: t('pleaseEnterUrl') })
             return false
         }
 
-        // Basic URL validation - supports subdomains like th.y8.com
+        // Basic URL validation
         const urlPattern = /^([a-zA-Z0-9]([a-zA-Z0-9-]*[a-zA-Z0-9])?\.)+[a-zA-Z]{2,}$/
         const cleanUrl = url.replace(/^(https?:\/\/)?(www\.)?/, '').replace(/\/$/, '').replace(/\/.*$/, '')
         if (!urlPattern.test(cleanUrl)) {
@@ -69,10 +68,11 @@ export function useBlocklist(t) {
             closeLoading()
             Toast.fire({ icon: 'error', title: t('failedToAddWebsite') })
             return false
+
         }
     }
 
-    // Delete website with confirmation
+    // Delete website
     const deleteWebsite = async (id, url) => {
         const confirmed = await confirmDialog({
             title: t('deleteWebsiteTitle'),
@@ -132,7 +132,7 @@ export function useBlocklist(t) {
         }
     }
 
-    // Delete program with confirmation
+    // delete program
     const deleteProgram = async (id, name) => {
         const confirmed = await confirmDialog({
             title: t('deleteProgramTitle'),
@@ -155,7 +155,7 @@ export function useBlocklist(t) {
         }
     }
 
-    // Export BAT files
+    // export bat file
     const exportBat = async () => {
         const confirmed = await showQuestion({
             title: t('exportBatTitle'),

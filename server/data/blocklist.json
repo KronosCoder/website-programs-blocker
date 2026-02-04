@@ -101,20 +101,12 @@
       "url": "steamcommunity.com"
     },
     {
-      "id": 26,
-      "url": "epicgames.com"
-    },
-    {
-      "id": 27,
-      "url": "www.epicgames.com"
-    },
-    {
-      "id": 28,
-      "url": "store.epicgames.com"
-    },
-    {
       "id": 29,
       "url": "th.y8.com"
+    },
+    {
+      "id": 30,
+      "url": "e-tech.ac.th"
     }
   ],
   "programs": [
@@ -169,15 +161,75 @@
   ],
   "version": {
     "major": 1,
-    "minor": 1,
-    "patch": 3
+    "minor": 2,
+    "patch": 7
   },
   "exportHistory": [
     {
-      "version": "v1.1.2",
-      "date": "2026-02-03T04:11:30.133Z",
-      "blockFile": "block_games_v1.1.2.bat",
-      "unblockFile": "unblock_games_v1.1.2.bat"
+      "version": "v1.2.6",
+      "date": "2026-02-04T13:43:44.611Z",
+      "blockFile": "block_games_v1.2.6.bat",
+      "unblockFile": "unblock_games_v1.2.6.bat"
+    },
+    {
+      "version": "v1.2.5",
+      "date": "2026-02-03T17:47:49.846Z",
+      "blockFile": "block_games_v1.2.5.bat",
+      "unblockFile": "unblock_games_v1.2.5.bat"
+    },
+    {
+      "version": "v1.2.4",
+      "date": "2026-02-03T17:45:27.842Z",
+      "blockFile": "block_games_v1.2.4.bat",
+      "unblockFile": "unblock_games_v1.2.4.bat"
+    },
+    {
+      "version": "v1.2.3",
+      "date": "2026-02-03T17:42:13.308Z",
+      "blockFile": "block_games_v1.2.3.bat",
+      "unblockFile": "unblock_games_v1.2.3.bat"
+    },
+    {
+      "version": "v1.2.2",
+      "date": "2026-02-03T17:40:13.560Z",
+      "blockFile": "block_games_v1.2.2.bat",
+      "unblockFile": "unblock_games_v1.2.2.bat"
+    },
+    {
+      "version": "v1.2.1",
+      "date": "2026-02-03T17:37:19.405Z",
+      "blockFile": "block_games_v1.2.1.bat",
+      "unblockFile": "unblock_games_v1.2.1.bat"
+    },
+    {
+      "version": "v1.2.0",
+      "date": "2026-02-03T17:28:03.182Z",
+      "blockFile": "block_games_v1.2.0.bat",
+      "unblockFile": "unblock_games_v1.2.0.bat"
+    },
+    {
+      "version": "v1.1.9",
+      "date": "2026-02-03T17:24:38.635Z",
+      "blockFile": "block_games_v1.1.9.bat",
+      "unblockFile": "unblock_games_v1.1.9.bat"
+    },
+    {
+      "version": "v1.1.8",
+      "date": "2026-02-03T17:14:58.545Z",
+      "blockFile": "block_games_v1.1.8.bat",
+      "unblockFile": "unblock_games_v1.1.8.bat"
+    },
+    {
+      "version": "v1.1.7",
+      "date": "2026-02-03T17:11:19.031Z",
+      "blockFile": "block_games_v1.1.7.bat",
+      "unblockFile": "unblock_games_v1.1.7.bat"
+    },
+    {
+      "version": "v1.1.6",
+      "date": "2026-02-03T17:02:37.927Z",
+      "blockFile": "block_games_v1.1.6.bat",
+      "unblockFile": "unblock_games_v1.1.6.bat"
     }
   ]
 }

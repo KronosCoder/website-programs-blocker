@@ -51,9 +51,13 @@ echo # ====== GAME BLOCKER ${version} - START ====== >> "%HOSTS%"
 
 `;
 
-    // Add website blocks
+    // Add website blocks (base domain + www variant)
     websites.forEach(w => {
         bat += `echo 127.0.0.1 ${w.url} >> "%HOSTS%"\r\n`;
+        // Also block www. variant to ensure complete blocking
+        if (!w.url.startsWith('www.')) {
+            bat += `echo 127.0.0.1 www.${w.url} >> "%HOSTS%"\r\n`;
+        }
     });
 
     bat += `
@@ -141,11 +145,15 @@ function generateUnblockBat(data, version) {
     const websites = data.websites;
     const programs = data.programs;
 
-    // Get unique domains for filtering
-    const uniqueDomains = [...new Set(websites.map(w => {
-        const parts = w.url.split('.');
-        return parts.length >= 2 ? parts.slice(-2).join('.') : w.url;
-    }))];
+    // Get all URLs to remove (base domain + www variant)
+    const allUrlsToRemove = [];
+    websites.forEach(w => {
+        allUrlsToRemove.push(w.url);
+        if (!w.url.startsWith('www.')) {
+            allUrlsToRemove.push('www.' + w.url);
+        }
+    });
+    const uniqueUrls = [...new Set(allUrlsToRemove)];
 
     let bat = `@echo off
 :: ===================================
@@ -188,9 +196,9 @@ set TEMP_HOSTS=%TEMP%\\hosts_temp
 findstr /v "GAME BLOCKER" "%HOSTS%" > "%TEMP_HOSTS%" 2>nul
 `;
 
-    // Add findstr commands for each unique domain
-    uniqueDomains.forEach(domain => {
-        bat += `findstr /v "${domain}" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul\r\n`;
+    // Add findstr commands for each URL (removes both base and www. variants)
+    uniqueUrls.forEach(url => {
+        bat += `findstr /v /c:"${url}" "%TEMP_HOSTS%" > "%HOSTS%" 2>nul\r\n`;
         bat += `copy "%HOSTS%" "%TEMP_HOSTS%" >nul 2>&1\r\n`;
     });
 
